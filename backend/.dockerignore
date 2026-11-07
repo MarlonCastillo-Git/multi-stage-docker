@@ -1,0 +1,9 @@
+vendor
+node_modules
+.git
+.env*
+storage
+bootstrap/cache/*
+database/*.sqlite*
+tests
+README.md

@@ -1,0 +1,39 @@
+{
+  "name": "ecommerce2",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3060",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:flow": "node tests/flow.mjs",
+    "test:browser": "node tests/browser-smoke.mjs",
+    "format": "prettier --write src tests *.ts *.mjs",
+    "lighthouse": "lighthouse http://localhost:3060/catalogo --output=html --output=json --output-path=reports/lighthouse-catalogo --chrome-flags=\"--headless --no-sandbox\" --only-categories=performance,accessibility,best-practices,seo"
+  },
+  "dependencies": {
+    "@stripe/react-stripe-js": "latest",
+    "@stripe/stripe-js": "latest",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "server-only": "^0.0.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.0.0",
+    "lighthouse": "latest",
+    "prettier": "^3.9.10",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@12.3.4"
+}
