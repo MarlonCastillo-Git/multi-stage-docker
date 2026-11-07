@@ -113,3 +113,5 @@ docs/VERIFICACION.md   Evidencia de ejecución
 ```
 
 Los componentes de terceros conservan sus licencias en sus distribuciones; se mantiene el código fuente de las aplicaciones previamente desarrolladas.
+
+
