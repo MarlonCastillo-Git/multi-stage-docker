@@ -63,10 +63,13 @@ Build repetido sin cambios: **2.33 segundos**, código de salida 0, usando cach�
 
 ## Repetir
 
+- Regístrese en la tienda y cree una orden; anote su número.
+- Registro: http://localhost:3000/registro
+- Tienda: http://localhost:3000/catalogo
+
 ```bash
 ./scripts/setup.sh
 docker compose up --build -d --wait
-python3 scripts/verify.py --recreate
 ```
 
-El script crea usuarios y pedidos de prueba, conserva el volumen y deja los servicios levantados. No ejecute `down -v` si desea conservar datos.
+

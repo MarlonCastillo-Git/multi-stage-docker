@@ -13,5 +13,3 @@
 !**/bootstrap/cache/.gitignore
 work/
 
-**/__pycache__/
-**/*.pyc

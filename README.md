@@ -17,7 +17,7 @@ Son **tres servicios**. Nginx y PHP-FPM comparten el contenedor backend, adminis
 
 ## Requisitos y arranque
 
-Docker Engine/Desktop con Compose v2 y BuildKit, Git y OpenSSL. No se necesita PHP, Composer, Node ni MySQL instalados en el host para ejecutar la aplicación. Python 3 solo es necesario para el verificador opcional.
+Docker Engine/Desktop con Compose v2 y BuildKit, Git y OpenSSL. No se necesita PHP, Composer, Node ni MySQL instalados en el host para ejecutar la aplicación. 
 
 ```bash
 git clone https://github.com/MarlonCastillo-Git/multi-stage-docker.git
@@ -33,8 +33,8 @@ docker compose up --build -d
 docker compose ps
 ```
 
-- Tienda: http://localhost:3000/catalogo
 - Registro: http://localhost:3000/registro
+- Tienda: http://localhost:3000/catalogo
 - API: http://localhost:8000/api/v1/products
 - Salud de API y conexión MySQL: http://localhost:8000/health
 
@@ -67,18 +67,15 @@ No se necesita SQL de inicialización: Laravel administra el esquema mediante mi
 
 ## Verificar el flujo y la persistencia
 
-Con los servicios saludables:
+Con los servicios saludables :
+Salud de API y conexión MySQL: http://localhost:8000/health
 
-```bash
-python3 scripts/verify.py
-python3 scripts/verify.py --recreate
-```
-
-La primera prueba crea un usuario exclusivo de prueba y una orden, comprueba stock y total, lee el catálogo y el historial desde Next y consulta MySQL directamente. La segunda añade `docker compose down` y `docker compose up -d --wait`, y verifica que el mismo usuario y pedido sobreviven. Conserva el volumen y deja los servicios levantados. Crea datos de prueba, por lo que debe ejecutarse en este entorno de demostración.
-
-Verificación manual:
+Realice la verificación manual:
 
 1. Regístrese en la tienda y cree una orden; anote su número.
+- Registro: http://localhost:3000/registro
+- Tienda: http://localhost:3000/catalogo
+
 2. Ejecute `docker compose down` para eliminar los contenedores.
 3. Ejecute `docker compose up -d --wait` para recrearlos.
 4. Inicie sesión con la misma cuenta y consulte **Mis compras**. El pedido y las existencias se conservan.
@@ -95,7 +92,7 @@ docker image ls 'multi-stage-docker-*'
 docker compose logs --tail=100
 ```
 
-El informe `docs/VERIFICACION.md` registra los resultados reales y tamaños medidos. No se atribuye una reducción porcentual respecto a imágenes antiguas que no fueron proporcionadas.
+El informe `docs/VERIFICACION.md` registra los resultados reales y tamaños medidos.
 
 ## Stripe y despliegue público
 
