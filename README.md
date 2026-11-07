@@ -109,8 +109,7 @@ backend/docker/       Nginx, Supervisor, PHP y entrypoint
 docker-compose.yml    Servicios, salud, redes y volumen
 .env.example          Variables documentadas
 scripts/setup.sh      Generación local de secretos
-scripts/verify.py     Prueba de integración y persistencia
 docs/VERIFICACION.md   Evidencia de ejecución
 ```
 
-Los componentes de terceros conservan sus licencias en sus distribuciones; se mantiene el código fuente de las aplicaciones proporcionadas por el propietario del repositorio.
+Los componentes de terceros conservan sus licencias en sus distribuciones; se mantiene el código fuente de las aplicaciones previamente desarrolladas.
